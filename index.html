@@ -30,21 +30,28 @@
 <style>
   /* Smooth scroll & offset for sticky header */
   html { scroll-behavior: smooth; }
-  #services, #portfolio, #about, #contact { scroll-margin-top: 90px; }
+  #services, #projects, #about, #contact { scroll-margin-top: 90px; }
 
-  /* Trim the template’s big paddings */
+  /* Trim section paddings */
   .service_area,
-  .portfolio_area,
   .about_me,
-  .portfolio_image_area { padding-top: 50px !important; padding-bottom: 50px !important; }
+  .projects_area,
+  .projects_grid { padding-top: 50px !important; padding-bottom: 50px !important; }
 
-  /* Reduce the big title spacer */
+  /* Section titles */
   .section_title.mb-65 { margin-bottom: 30px !important; }
 
-  /* (Optional) tighten the white band above/below the hero */
+  /* Keep hero tight */
   .slider_area { margin-bottom: 0 !important; }
-</style>
 
+  /* Project thumbnails behave */
+  .project_thumb img { width: 100%; height: auto; display: block; border-radius: 6px; }
+
+  /* Optional: neat project card */
+  .single_project { position: relative; margin-bottom: 30px; }
+  .single_project .project_body { padding-top: 12px; text-align: center; }
+  .single_project .tags { font-size: 12px; opacity: .7; }
+</style>
 
 <body>
     <!--[if lte IE 9]>
@@ -75,7 +82,8 @@
                                         <li><a href="contact.html">Contact</a></li> -->
                                         <li><a href="#about">About</a></li>
                                         <li><a href="#services">Services</a></li>
-                                        <li><a href="#portfolio">Portfolio</a></li>
+                                        <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+                                        <li><a href="#projects">Projects</a></li>
                                         <li><a href="#contact">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -172,103 +180,95 @@
         </div>
     <!--/ service_area  -->
 
- <!-- portfolio_area -->
-    <div class="portfolio_area portfolio_bg_1" id="portfolio">
-    <div class="portfolio_area portfolio_bg_1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title white_text text-center">
-                        <span>Portfolios</span>
-                        <h3>Some of my awesome <br>
-                                stuffs here</h3>
-                    </div>
-                </div>
-            </div>
+<!-- projects_area (title) -->
+<div class="projects_area" id="projects">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="section_title text-center mb-65">
+          <span>PROJECTS</span>
+          <h3>Selected Work &amp; Demos</h3>
+          <p style="max-width:820px;margin:10px auto 0;">
+            A few quick samples. I can share short GIFs or walkthroughs for each—covering the workflow,
+            the data inputs, and the result.
+          </p>
         </div>
+      </div>
     </div>
-    <!--/ portfolio_area -->
+  </div>
+</div>
+<!-- /projects_area -->
 
-    <!-- portfolio_image_area  -->
-    <div class="portfolio_image_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5 col-md-5">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="img/portfolio/1.png" alt="">
-                        </div>
-                        <a href="img/portfolio/1.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-7 col-md-7">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="img/portfolio/2.png" alt="">
-                        </div>
-                        <a href="img/portfolio/2.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="img/portfolio/3.png" alt="">
-                        </div>
-                        <a href="img/portfolio/3.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="img/portfolio/4.png" alt="">
-                        </div>
-                        <a href="img/portfolio/4.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-12 col-lg-4">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="img/portfolio/5.png" alt="">
-                        </div>
-                        <a href="img/portfolio/5.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="more_portfolio text-center">
-                        <a class="line_btn" href="#">More Folio</a>
-                    </div>
-                </div>
-            </div>
+<!-- projects_grid (4 items) -->
+<div class="projects_grid">
+  <div class="container">
+    <div class="row">
+
+      <!-- Project 1 -->
+      <div class="col-xl-6 col-lg-6 col-md-12">
+        <div class="single_project">
+          <div class="project_thumb">
+            <!-- placeholder image/GIF; replace src with your GIF/PNG -->
+            <img src="img/projects/project-1.gif" alt="SaaS Data Migration Tool demo">
+          </div>
+          <div class="project_body">
+            <h3>SaaS Data Migration Tool</h3>
+            <div class="tags">SQL • C# • EPPlus • CSV/XLSX Export</div>
+          </div>
         </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-xl-6 col-lg-6 col-md-12">
+        <div class="single_project">
+          <div class="project_thumb">
+            <img src="img/projects/project-2.gif" alt="Google Sheets workflow automation">
+          </div>
+          <div class="project_body">
+            <h3>Sheets Workflow Automation</h3>
+            <div class="tags">Apps Script • Sidebar UI • Approvals</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-xl-6 col-lg-6 col-md-12">
+        <div class="single_project">
+          <div class="project_thumb">
+            <img src="img/projects/project-3.gif" alt="Data cleansing & dedupe suite">
+          </div>
+          <div class="project_body">
+            <h3>Data Cleansing &amp; Dedupe</h3>
+            <div class="tags">Excel/VBA • Fuzzy Match • QC Checks</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-xl-6 col-lg-6 col-md-12">
+        <div class="single_project">
+          <div class="project_thumb">
+            <img src="img/projects/project-4.gif" alt="Automated dashboards & reporting">
+          </div>
+          <div class="project_body">
+            <h3>Automated Dashboards</h3>
+            <div class="tags">SQL • Sheets • Scheduled Jobs</div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- optional CTA under grid -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="more_portfolio text-center">
+          <a class="line_btn" href="#">See More Projects</a>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
     <!--/ portfolio_image_area  -->
 
    <!-- about_me -->
