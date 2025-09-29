@@ -294,55 +294,98 @@
     <!--/ about_me  -->
 
 <!-- /about_me -->
+        <style>
+        /* Styling for connectors */
+        .connector-down {
+          width: 2px;
+          height: 40px;
+          background: #ccc;
+          margin: 0 auto;
+        }
+        
+        .child-row {
+          position: relative;
+        }
+        
+        .child-row::before {
+          content: "";
+          position: absolute;
+          top: -20px; /* distance from children to parent */
+          left: 15%;
+          right: 15%;
+          height: 2px;
+          background: #ccc;
+        }
+        
+        /* Optional tweaks for spacing */
+        .parent-counter {
+          margin-bottom: 10px;
+        }
+        
+        .child-counter {
+          margin-top: 10px;
+        }
+        
+        .freelance-counter {
+          margin-top: 40px; /* offset for balance */
+        }
+        </style>
+        
         <div class="counter_area">
           <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
         
-              <!-- Corporate Projects -->
-              <div class="col-xl-3 col-md-6">
-                <div class="single_counter text-center">
+              <!-- Corporate Projects (Parent) -->
+              <div class="col-xl-6 col-md-8 position-relative">
+                <div class="single_counter text-center parent-counter">
                   <h3>
                     <span class="counter">300</span><span>+</span>
                   </h3>
                   <p>Corporate Projects</p>
-                  <small style="display:block;opacity:.7">Breakdown below</small>
+                  <!-- <small style="display:block;opacity:.7">Breakdown below</small> -->
                 </div>
-              </div>
         
-              <!-- SaaS Data Migration -->
-              <div class="col-xl-3 col-md-6">
-                <div class="single_counter text-center">
-                  <h3>
-                    <span class="counter">200</span><span>+</span>
-                  </h3>
-                  <p>Data Migration</p>
-                  <small style="display:block;opacity:.7">
-                    Combination of SQL, legacy systems, C#, and Excel-based Saas migrations
-                  </small>
-                </div>
-              </div>
+                <!-- Connector line going down -->
+                <div class="connector-down"></div>
         
-              <!-- Business Custom Tools -->
-              <div class="col-xl-3 col-md-6">
-                <div class="single_counter text-center">
-                  <h3>
-                    <span class="counter">50</span><span>+</span>
-                  </h3>
-                  <p>Business Custom Tools</p>
-                  <small style="display:block;opacity:.7">
-                    BAU utilities, cleansing tools, automated dashboards & workflows
-                  </small>
+                <!-- Child counters under Corporate -->
+                <div class="row mt-5 child-row">
+                  <!-- SaaS Data Migration -->
+                  <div class="col-md-6 position-relative">
+                    <div class="single_counter text-center child-counter">
+                      <h3>
+                        <span class="counter">200</span><span>+</span>
+                      </h3>
+                      <p>Data Migration</p>
+                      <small style="display:block;opacity:.7">
+                        Combination of SQL, legacy systems, C#, and Excel-based SaaS migrations
+                      </small>
+                    </div>
+                  </div>
+        
+                  <!-- Business Custom Tools -->
+                  <div class="col-md-6 position-relative">
+                    <div class="single_counter text-center child-counter">
+                      <h3>
+                        <span class="counter">50</span><span>+</span>
+                      </h3>
+                      <p>Business Custom Tools</p>
+                      <small style="display:block;opacity:.7">
+                        BAU utilities, cleansing tools, automated dashboards & workflows
+                      </small>
+                    </div>
+                  </div>
                 </div>
               </div>
         
               <!-- Freelance Tools (separate from corporate) -->
               <div class="col-xl-3 col-md-6">
-                <div class="single_counter text-center">
+                <div class="single_counter text-center freelance-counter">
                   <h3>
                     <span class="counter">5</span>
                   </h3>
                   <p>Freelance Tools</p>
-                  <small style="display:block;opacity:.7">Separate from corporate projects</small>
+                  <!-- <small style="display:block;opacity:.7">Separate from corporate projects</small> -->
                 </div>
               </div>
         
