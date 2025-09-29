@@ -27,6 +27,25 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
+<style>
+  /* Smooth scroll & offset for sticky header */
+  html { scroll-behavior: smooth; }
+  #services, #portfolio, #about, #contact { scroll-margin-top: 90px; }
+
+  /* Trim the template’s big paddings */
+  .service_area,
+  .portfolio_area,
+  .about_me,
+  .portfolio_image_area { padding-top: 50px !important; padding-bottom: 50px !important; }
+
+  /* Reduce the big title spacer */
+  .section_title.mb-65 { margin-bottom: 30px !important; }
+
+  /* (Optional) tighten the white band above/below the hero */
+  .slider_area { margin-bottom: 0 !important; }
+</style>
+
+
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -108,83 +127,84 @@
         </div>
     </div>
     <!-- slider_area_end -->
-
+    
     <!-- service_area  -->
-    <div class="service_area" id="services">
-    <div class="service_area">
-        <div class="container">
+        <div class="service_area" id="services">
+          <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                    <!-- <div class="section_title text-center mb-65">
-                        <span>Service Provided</span>
-                        <h3>Build business customer tools  <br>
-                                & data automation projects</h3>
-                    </div> -->
-                    <div class="section_title text-center mb-65">
-                      <span>SERVICES</span>
-                      <h3>Data Migration, Automation & Analytics</h3>
-                      <p style="max-width:820px;margin:10px auto 0;">
-                        I design and deliver automation that bridges spreadsheets, SaaS platforms, and databases. 
-                          My work spans custom reporting, workflow streamlining, and system integrations across Excel, Google Workspace, SQL, and C#. 
-                          The result: practical, dependable tools that reduce bottlenecks and give teams reliable insights without the heavy lifting.
-                      </p>
-                    </div>
+              <div class="col-xl-12">
+                <div class="section_title text-center mb-65">
+                  <span>SERVICES</span>
+                  <h3>Data Migration, Automation &amp; Analytics</h3>
+                  <p style="max-width:820px;margin:10px auto 0;">
+                    I design and deliver automation that bridges spreadsheets, SaaS platforms, and databases.
+                    My work spans custom reporting, workflow streamlining, and system integrations across Excel, Google Workspace, SQL, and C#.
+                    The result: practical, dependable tools that reduce bottlenecks and give teams reliable insights without the heavy lifting.
+                  </p>
                 </div>
+              </div>
             </div>
+        
             <div class="row">
               <div class="col-xl-4 col-md-6">
                 <div class="single_service text-center">
                   <div class="icon"><img src="img/svg_icon/1.svg" alt=""></div>
-                  <h3>Google Sheets & Apps Script</h3>
-                  <p>I build production-ready tools on Google Workspace: sidebar UIs, approvals, data
-                        validation, and scheduled jobs. Integrations with Drive/Sheets APIs and third-party
-                        REST endpoints (e.g., create/update/delete, XLSX export) turn spreadsheets into
-                        reliable apps that non-technical teams can use every day.</p>
+                  <h3>Google Sheets &amp; Apps Script</h3>
+                  <p>Production-ready tools on Google Workspace: sidebar UIs, approvals, validation, scheduled jobs, and API integrations.</p>
                 </div>
               </div>
               <div class="col-xl-4 col-md-6">
                 <div class="single_service text-center">
                   <div class="icon"><img src="img/svg_icon/2.svg" alt=""></div>
-                    <h3>Excel &amp; VBA Automation</h3>
-                    <p>
-                    High-performance macros and modern formulas (LET, FILTER, XLOOKUP) for fast,
-                    repeatable workflows. Fuzzy matching, data quality checks, and one-click processing
-                    for 50k+ rows—purpose-built tools for migrations and day-to-day operations.
-                    </p>
+                  <h3>Excel &amp; VBA Automation</h3>
+                  <p>High-performance macros and modern formulas for repeatable workflows, data quality checks, and one-click processing.</p>
                 </div>
               </div>
               <div class="col-xl-4 col-md-6">
                 <div class="single_service text-center">
                   <div class="icon"><img src="img/svg_icon/3.svg" alt=""></div>
                   <h3>SQL &amp; C#</h3>
-                    <p>
-                    Schema analysis, cleansing, and ETL across MySQL and SQL Server with reproducible,
-                    auditable scripts. C# integrations (EPPlus, REST APIs) power exporters, schedulers,
-                    and safe joins that move clean data into SaaS import formats with confidence.
-                    </p>
+                  <p>Schema analysis, cleansing, ETL, and C# integrations (EPPlus, REST) to move clean data into SaaS import formats safely.</p>
                 </div>
               </div>
             </div>
+          </div>
         </div>
-    </div>
-    </div>
     <!--/ service_area  -->
 
     <!-- portfolio_area -->
+    <!-- portfolio_area -->
     <div class="portfolio_area portfolio_bg_1" id="portfolio">
-    <div class="portfolio_area portfolio_bg_1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title white_text text-center">
-                        <span>Portfolios</span>
-                        <h3>Some of my awesome <br>
-                                stuffs here</h3>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="section_title white_text text-center">
+              <span>Portfolios</span>
+              <h3>Some of my awesome <br>stuffs here</h3>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+    <!-- /portfolio_area -->
+    
+    <!-- portfolio_image_area -->
+    <div class="portfolio_image_area">
+      <div class="container">
+        <div class="row">
+          <!-- your portfolio cards unchanged -->
+          ...
+        </div>
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="more_portfolio text-center">
+              <a class="line_btn" href="#">More Folio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /portfolio_image_area -->
     <!--/ portfolio_area -->
 
     <!-- portfolio_image_area  -->
@@ -269,40 +289,31 @@
     </div>
     <!--/ portfolio_image_area  -->
 
-    <!-- about_me  -->
+   <!-- about_me -->
     <div class="about_me" id="about">
-    <div class="about_me">
-        <div class="about_large_title d-none d-lg-block">
-                About
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-md-6">
-                    <div class="about_e_details">
-                        <h3>About me</h3>
-                        <p>I’m a Data Specialist who thrives on solving messy data problems. 
-                            From legacy migrations to custom tools, I enjoy turning complexity into clear, usable systems. 
-                            I focus on building solutions that save time, improve accuracy, and scale with the business — so teams 
-                            can spend less effort on manual work and more on what really matters.</p>
-                        <div class="download_cv">
-                            <a class="boxed-btn3" href="#">Download CV</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="about_img">
-                        <div class="color_pattern d-none d-lg-block">
-                            <img src="img/about/color_grid.png" alt="">
-                        </div>
-                        <div class="my_Pic">
-                                <img src="img/about/about.png" alt="">
-                        </div>
-                    </div>
-                </div>
+      <div class="about_large_title d-none d-lg-block">About</div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-md-6">
+            <div class="about_e_details">
+              <h3>About me</h3>
+              <p>
+                I’m a Data Specialist who thrives on solving messy data problems. From legacy migrations to custom tools,
+                I turn complexity into clear, usable systems that save time, improve accuracy, and scale with the business.
+              </p>
+              <div class="download_cv"><a class="boxed-btn3" href="#">Download CV</a></div>
             </div>
+          </div>
+          <div class="col-xl-6 col-md-6">
+            <div class="about_img">
+              <div class="color_pattern d-none d-lg-block"><img src="img/about/color_grid.png" alt=""></div>
+              <div class="my_Pic"><img src="img/about/about.png" alt=""></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!--/ about_me  -->
+    <!-- /about_me -->
 
 <!-- /about_me -->
 <!-- Counters (hierarchy) -->
