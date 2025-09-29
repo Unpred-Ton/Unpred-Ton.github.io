@@ -294,98 +294,126 @@
     <!--/ about_me  -->
 
 <!-- /about_me -->
+<!-- Counters (hierarchy) -->
         <style>
-        /* Styling for connectors */
-        .connector-down {
-          width: 2px;
-          height: 40px;
-          background: #ccc;
-          margin: 0 auto;
-        }
+          /* Tighten spacing with the section above */
+          .about_me { padding-bottom: 40px !important; }
+          .counter_area { padding-top: 30px !important; }
         
-        .child-row {
-          position: relative;
-        }
+          /* Layout */
+          .hierarchy-wrap{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 56px;            /* space between corporate column and freelance card */
+          }
+          .corp-col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 0;
+          }
         
-        .child-row::before {
-          content: "";
-          position: absolute;
-          top: -20px; /* distance from children to parent */
-          left: 15%;
-          right: 15%;
-          height: 2px;
-          background: #ccc;
-        }
+          /* Cards */
+          .single_counter{ width: 100%; }
+          .parent-counter{
+            max-width: 520px;     /* slimmer parent */
+            margin: 0 auto 10px;
+          }
+          .child-row{
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 360px));
+            gap: 24px 28px;
+            margin-top: 36px;
+          }
+          .child-counter{ margin-top: 0; }
         
-        /* Optional tweaks for spacing */
-        .parent-counter {
-          margin-bottom: 10px;
-        }
+          /* Freelance in the middle between parent and children */
+          .freelance-col{
+            align-self: center;   /* vertically center between parent and child */
+            width: 340px;         /* nice fixed width so it visually “fits” the gap */
+          }
+          .freelance-counter{ margin-top: 0; }
         
-        .child-counter {
-          margin-top: 10px;
-        }
+          /* Connectors */
+          .connector-down{
+            width: 2px; height: 42px;
+            background: #ccc; margin: 8px auto 0;
+          }
+          .child-row::before{
+            content: "";
+            position: absolute;
+            top: -20px;           /* distance from children to parent */
+            left: 6%;
+            right: 6%;
+            height: 2px;
+            background: #ccc;
+          }
         
-        .freelance-counter {
-          margin-top: 40px; /* offset for balance */
-        }
+          /* Small refinements on numbers/cards */
+          .single_counter h3{ margin-bottom: 6px; }
+          .single_counter p{ margin-bottom: 0; }
+        
+          /* Responsive */
+          @media (max-width: 1199.98px){
+            .hierarchy-wrap{ gap: 40px; }
+            .freelance-col{ width: 300px; }
+          }
+          @media (max-width: 991.98px){
+            .hierarchy-wrap{
+              flex-direction: column;
+              align-items: center;
+            }
+            .freelance-col{ width: 100%; max-width: 360px; }
+            .child-row{
+              grid-template-columns: 1fr;
+            }
+            .child-row::before{ left: 20%; right: 20%; }
+          }
         </style>
         
         <div class="counter_area">
           <div class="container">
-            <div class="row justify-content-center">
+            <div class="hierarchy-wrap">
         
-              <!-- Corporate Projects (Parent) -->
-              <div class="col-xl-6 col-md-8 position-relative">
+              <!-- Left column: Parent + children -->
+              <div class="corp-col">
+        
+                <!-- Corporate Projects (Parent) -->
                 <div class="single_counter text-center parent-counter">
-                  <h3>
-                    <span class="counter">300</span><span>+</span>
-                  </h3>
+                  <h3><span class="counter">300</span><span>+</span></h3>
                   <p>Corporate Projects</p>
-                  <!-- <small style="display:block;opacity:.7">Breakdown below</small> -->
                 </div>
         
-                <!-- Connector line going down -->
+                <!-- Vertical connector -->
                 <div class="connector-down"></div>
         
-                <!-- Child counters under Corporate -->
-                <div class="row mt-5 child-row">
-                  <!-- SaaS Data Migration -->
-                  <div class="col-md-6 position-relative">
-                    <div class="single_counter text-center child-counter">
-                      <h3>
-                        <span class="counter">200</span><span>+</span>
-                      </h3>
-                      <p>Data Migration</p>
-                      <small style="display:block;opacity:.7">
-                        Combination of SQL, legacy systems, C#, and Excel-based SaaS migrations
-                      </small>
-                    </div>
+                <!-- Children -->
+                <div class="child-row">
+                  <div class="single_counter text-center child-counter">
+                    <h3><span class="counter">200</span><span>+</span></h3>
+                    <p>Data Migration</p>
+                    <small style="display:block;opacity:.7">
+                      Combination of SQL, legacy systems, C#, and Excel-based SaaS migrations
+                    </small>
                   </div>
         
-                  <!-- Business Custom Tools -->
-                  <div class="col-md-6 position-relative">
-                    <div class="single_counter text-center child-counter">
-                      <h3>
-                        <span class="counter">50</span><span>+</span>
-                      </h3>
-                      <p>Business Custom Tools</p>
-                      <small style="display:block;opacity:.7">
-                        BAU utilities, cleansing tools, automated dashboards & workflows
-                      </small>
-                    </div>
+                  <div class="single_counter text-center child-counter">
+                    <h3><span class="counter">50</span><span>+</span></h3>
+                    <p>Business Custom Tools</p>
+                    <small style="display:block;opacity:.7">
+                      BAU utilities, cleansing tools, automated dashboards &amp; workflows
+                    </small>
                   </div>
                 </div>
               </div>
         
-              <!-- Freelance Tools (separate from corporate) -->
-              <div class="col-xl-3 col-md-6">
+              <!-- Right column: Freelance (centered between parent & children) -->
+              <div class="freelance-col">
                 <div class="single_counter text-center freelance-counter">
-                  <h3>
-                    <span class="counter">5</span>
-                  </h3>
+                  <h3><span class="counter">5</span></h3>
                   <p>Freelance Tools</p>
-                  <!-- <small style="display:block;opacity:.7">Separate from corporate projects</small> -->
                 </div>
               </div>
         
